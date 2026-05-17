@@ -12,24 +12,27 @@ import Stats from "../sections/stats";
 import FAQ from "../sections/FAQ";
 import CursorGlow from "../components/CursorGlow";
 import Particles from "../components/Particles";
+import AuthModal from "../components/AuthModal";
 
 export default function Home() {
+  const [open, setOpen] = useState(false);
   const [loading, setLoading] = useState(true);
 
-useEffect(() => {
-  const timer = setTimeout(() => {
-    setLoading(false);
-  }, 2500);
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setLoading(false);
+    }, 2500);
 
-  return () => clearTimeout(timer);
-}, []);
+    return () => clearTimeout(timer);
+  }, []);
 
-if (loading) {
-  return <Loader />;
-}
+  if (loading) {
+    return <Loader />;
+  }
   return (
     <main className="relative z-10">
       <div className="grid-bg fixed inset-0 z-0"></div>
+      <AuthModal open={open} setOpen={setOpen} />
       <CursorGlow />
       <Particles />
       <Navbar />
@@ -38,10 +41,11 @@ if (loading) {
       <Stats />
       <Features />
       <Testimonials />
-      <CTA />
+      <CTA setOpen={setOpen} />
+
       <FAQ />
       <Footer />
-      
+
     </main>
   );
 }

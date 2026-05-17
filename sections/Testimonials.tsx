@@ -22,7 +22,7 @@ export default function Testimonials() {
             </p>
   
             <div className="mt-6">
-              <h4 className="text-lg font-semibold">Aarav Sharma</h4>
+              <h4 className="text-lg font-semibold">Anushka patel</h4>
               <p className="text-gray-500">Frontend Developer</p>
             </div>
           </div>
@@ -33,7 +33,7 @@ export default function Testimonials() {
             </p>
   
             <div className="mt-6">
-              <h4 className="text-lg font-semibold">Priya Mehta</h4>
+              <h4 className="text-lg font-semibold">Soumya Rai</h4>
               <p className="text-gray-500">AI Student</p>
             </div>
           </div>
@@ -44,7 +44,7 @@ export default function Testimonials() {
             </p>
   
             <div className="mt-6">
-              <h4 className="text-lg font-semibold">Rohan Patel</h4>
+              <h4 className="text-lg font-semibold">Priyanjali Swami</h4>
               <p className="text-gray-500">Software Engineer</p>
             </div>
           </div>

@@ -1,26 +1,165 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  scroll-behavior: smooth;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: #050816;
+  color: white;
+}
+body {
+  background:
+    radial-gradient(circle at top left, rgba(139,92,246,0.15), transparent 30%),
+    radial-gradient(circle at bottom right, rgba(6,182,212,0.12), transparent 30%),
+    #050816;
+}
+
+.shine-text {
+  background: linear-gradient(
+    90deg,
+    white 0%,
+    white 35%,
+    #a855f7 50%,
+    #22d3ee 55%,
+    white 70%,
+    white 100%
+  );
+
+  background-size: 300% 100%;
+
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  animation: shineMove 5s linear infinite;
+}
+
+@keyframes shineMove {
+  0% {
+    background-position: 100% 0;
+  }
+
+  100% {
+    background-position: -100% 0;
+  }
+}
+.stars {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.stars span {
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  background: white;
+  border-radius: 50%;
+  animation: twinkle 3s infinite ease-in-out;
+}
+
+.stars span:nth-child(1) {
+  top: 12%;
+  left: 18%;
+}
+
+.stars span:nth-child(2) {
+  top: 25%;
+  left: 75%;
+}
+
+.stars span:nth-child(3) {
+  top: 70%;
+  left: 12%;
+}
+
+.stars span:nth-child(4) {
+  top: 55%;
+  left: 50%;
+}
+
+.stars span:nth-child(5) {
+  top: 18%;
+  left: 60%;
+}
+
+.stars span:nth-child(6) {
+  top: 82%;
+  left: 78%;
+}
+
+.stars span:nth-child(7) {
+  top: 38%;
+  left: 32%;
+}
+
+@keyframes twinkle {
+  0% {
+    opacity: 0.2;
+    transform: scale(1);
+  }
+
+  50% {
+    opacity: 1;
+    transform: scale(2);
+    box-shadow: 0 0 15px white;
+  }
+
+  100% {
+    opacity: 0.2;
+    transform: scale(1);
+  }
+}
+.cursor-glow {
+  position: fixed;
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle,
+    rgba(168, 85, 247, 0.18),
+    transparent 70%
+  );
+
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+  z-index: 0;
+}
+.animate-border {
+  background-size: 300% 300%;
+  animation: borderMove 6s linear infinite;
+}
+
+@keyframes borderMove {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  100% {
+    background-position: 100% 50%;
+  }
+}
+.grid-bg {
+  background-image:
+    linear-gradient(rgba(255,255,255,0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.05) 1px, transparent 1px);
+
+  background-size: 50px 50px;
+
+  mask-image: radial-gradient(circle at center, black 40%, transparent 90%);
+}
+.animate-line {
+  background-size: 200% 200%;
+  animation: moveLine 4s linear infinite;
+}
+
+@keyframes moveLine {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  100% {
+    background-position: 200% 50%;
+  }
 }
